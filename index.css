@@ -4,7 +4,7 @@
 }
 
 h2, a{
-    font-size: 0.7em;
+    font-size: 1.5em;
     margin: 0;
     text-decoration: none;
     color: #ffeecc;
@@ -12,7 +12,7 @@ h2, a{
 }
 
 h2{
-    margin-left: 1px;
+    margin-left: 5px;
 
 }
 
@@ -20,6 +20,12 @@ body, html{
     padding: 0;
     margin: 0px;
     background-color: #46425e;
+    width: 100%;
+
+}
+
+main{
+    width: 100%;
 }
 
 header{
@@ -31,9 +37,11 @@ header{
     grid-template-columns: repeat(2, 1fr);
     gap: 4px;
     font-family: consolas;
-    max-width: 75%;
+    width: 75%;
+    height: 90vh;
     margin: 0.5em;
     color: #46425e;
+    font-size: 3em;
   }
   
   .item {
