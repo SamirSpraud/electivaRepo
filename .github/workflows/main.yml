@@ -3,7 +3,7 @@ name: Despliegue a Surge.sh
 on:
   push:
     branches:
-      - main  # Cambia "main" por el nombre de tu rama principal si es diferente
+      - main  
 
 jobs:
   build:
@@ -13,9 +13,10 @@ jobs:
       - name: Checkout del código
         uses: actions/checkout@v2
 
+      - name: Instalar Surge.sh
+        run: npm install -g surge
+
       - name: Despliegue a Surge.sh
-        uses: appleboy/surge-action@v1.5.0
-        with:
-          domain: tu-dominio.surge.sh  # Reemplaza "tu-dominio" por el dominio que quieras usar en Surge.sh
-          project: ./  # Esto indica que debe desplegar los archivos en el directorio actual
-          token: ${{ secrets.SURGE_TOKEN }}  # Asegúrate de configurar este secreto en la configuración de tu repositorio en GitHub
+        run: surge --project . --domain SamirSpraud.surge.sh
+        env:
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
